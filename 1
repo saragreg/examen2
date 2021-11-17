@@ -76,3 +76,19 @@ gpg -d privado.txt.gpg
 
   
   Crear contraseñas ssh --> ssh-keygen –t rsa 
+  copia1 la normal:
+en la terminal donde has creado la carpeta a copiar
+rsync -arv -e ssh /home/usuario/pruebaBackup/. usuario@35.216.209.145:/home/usuario/pruebaCloudBackup
+se pone el /. para que solo copie los archivos
+
+copia2 con link-dest:
+se cambia la a
+se crea una carpeta sola-- prueba2 y se van a copiar todo lo que hay en pruebaBackup pero con los cambios de a
+rsync -av --link-dest=usuario@35.216.209.145:/home/usuario/prueba . usuario@35.216.209.145:/home/usuario/prueba2
+
+copia3 con compare-dest:
+se borra c y se cambia b
+se crea una carpeta sola-- prueba3 y se copia todo lo que habia en prueba2 con los cambios que han ocurrido(sin c y con b cambiada)
+rsync -av --compare-dest=usuario@35.216.209.145:/home/usuario/prueba2 . usuario@35.216.209.145:/home/usuario/prueba3
+
+
