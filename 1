@@ -54,5 +54,16 @@ sudo apt-get install apache2
   
 l5
   Chuleta de comandos gpg (elbauldelprogramador) --> https://elbauldelprogramador.com/chuleta-de-comandos-para-gpg/
+  ENCRIPTAR DATOS CON CLAVE PÚBLICA 
+gpg --encrypt --recipient ID nombreArchivo
+gpg --import duran.key
+gpg -e -u "PACO RABONAS" -r "unai" fingerprint
+DESENCRIPTAR LOS DATOS 
+gpg -d nombreArvhico.gpg
+FIRMAR ARCHIVOS 
+gpg -u ID PRIVADA --output firmar.txt.gpg --sign firmar.txt 
+VERIFICAR UN ARCHIVO 
+gpg --verify firmar.txt.gpg 
+
   
   Crear contraseñas ssh --> ssh-keygen –t rsa 
