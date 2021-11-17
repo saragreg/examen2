@@ -65,5 +65,13 @@ gpg -u ID PRIVADA --output firmar.txt.gpg --sign firmar.txt
 VERIFICAR UN ARCHIVO 
 gpg --verify firmar.txt.gpg 
 
+CIFRADO SIMÉTRICO
+touch privado.txt
+CIFRADO
+gpg -c privado.txt → frase x2 
+DESCIFRADO
+gpg privado.txt.gpg
+
+
   
   Crear contraseñas ssh --> ssh-keygen –t rsa 
